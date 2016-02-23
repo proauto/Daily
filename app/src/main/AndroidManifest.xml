@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="creativestudioaq.daily">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="용사의하루"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".RestartService"
+            android:process=".remote">
+            <intent-filter>
+                <action android:name="ACTION.Restart.OnService" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".WidgetProvider"
+            android:label="(용사의 하루)">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="creativestudioaq.daily.Click_Action0" />
+                <action android:name="creativestudioaq.daily.Click_Action1" />
+                <action android:name="creativestudioaq.daily.Click_Action2" />
+                <action android:name="creativestudioaq.daily.Click_Action3" />
+                <action android:name="creativestudioaq.daily.Click_Action4" />
+                <action android:name="creativestudioaq.daily.Click_Action5" />
+                <action android:name="creativestudioaq.daily.Click_Action6" />
+                <action android:name="creativestudioaq.daily.Click_Action7" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider_basic" />
+        </receiver>
+
+        <activity android:name=".VoidActivity">
+
+        </activity>
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".ChecklistActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GraphActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InventoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ItemActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RecordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HowtouseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:name=".StopwatchActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ItemdetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".GoalActivity"
+            android:theme="@style/dialog"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NotificationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StatusActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InformationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TipActivity"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name=".OnService"
+            android:enabled="true" />
+
+
+        <activity android:name=".WidgetControlActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GoalchangeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ItemshopActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".OnceTip"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.supersonicads.sdk.controller.ControllerActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name="com.supersonicads.sdk.controller.InterstitialActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.supersonicads.sdk.controller.OpenUrlActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent" />
+    </application>
+
+</manifest>

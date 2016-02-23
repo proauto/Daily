@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:text="무기 컬렉션"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="52dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/backicon"/>
+
+
+        <Button
+            android:id="@+id/buttonsetting"
+            android:layout_width="52dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/seticon" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/shopshop"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:text="무기 상점 GO >>"
+        android:background="#ff5b4a"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#272D3A"/>
+
+    <ListView
+        android:id="@+id/inventorylist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="#00000000"
+        android:background="#272D3A"
+        android:listSelector="#00000000"
+        />
+
+</LinearLayout>
